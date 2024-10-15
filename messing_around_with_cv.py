@@ -1,6 +1,6 @@
 
-import easyocr
-import cv2
+import easyocr 
+import cv2 
 
 
 reader = easyocr.Reader(['en'])
@@ -25,23 +25,20 @@ file.write("")
 file.close()
 
 
-for cnt in contours:
-    x, y, w, h = cv2.boundingRect(cnt)
+#for cnt in contours:
+ #   x, y, w, h = cv2.boundingRect(cnt)
     
     
-    rect = cv2.rectangle(im2, (x, y), (x + w, y + h), (0, 255, 0), 2)
+  #  rect = cv2.rectangle(im2, (x, y), (x + w, y + h), (0, 255, 0), 2)
     
-    cropped = im2[y:y + h, x:x + w]
+   # cropped = im2[y:y + h, x:x + w]
     
-   
-    file = open("recognized.txt", "a")
-    
-
-    text = reader.readtext('image.jpg')
-    
-   
-    for (bbox, text, confidence) in text:
-        file.write(text + '\n')
+file = open("recognized.txt", "a")
     
 
-    file.close()
+text = reader.readtext('image.jpg')
+for (bbox, text, confidence) in text:
+    file.write(text + '\n')
+    
+
+file.close()
