@@ -23,17 +23,6 @@ im2 = img.copy()
 file = open("recognized.txt", "w+")
 file.write("")
 file.close()
-
-
-#for cnt in contours:
- #   x, y, w, h = cv2.boundingRect(cnt)
-    
-    
-  #  rect = cv2.rectangle(im2, (x, y), (x + w, y + h), (0, 255, 0), 2)
-    
-   # cropped = im2[y:y + h, x:x + w]
-    
-file = open("recognized.txt", "a")
     
 
 text = reader.readtext('image.jpg')
